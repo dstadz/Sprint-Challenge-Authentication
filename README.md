@@ -39,12 +39,16 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What is the purpose of using _sessions_?
+    They are used to 'remember' a users information, even when they change pages within a website. They preserve data across requests
 
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
-
+    bcrypt hashes passwords repeatedly in an exponential scale, and stored the end result. you cannot get the original password from the hash. Later, when the user logins or whatever, the entered password is also hashed, and then compared to the stored hash. Although both hashed strings are different, bcrypt can tell if they are related, and therefore come from the same original password entered. 
 - [ ] What does bcrypt do to slow down attackers?
-
+    the number of rounds set by the programmer determines the number of times the password is rehashed before being stored. if the round is set to 6, password is hashed 64 times. if round = 12, password is rehashed 4096 times. that would take a malicious hacker way to much tim e to be worth it. 
 - [ ] What are the three parts of the JSON Web Token?
+    -header: contains the algorithm and token type
+    -payload: contains 'claims', with is information & other data we want to store in the token
+    -signature: made by creating a string by base64 encoding the header and payload together, and then signing it with a secret.
 
 ## Minimum Viable Product
 
